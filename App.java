@@ -5,7 +5,6 @@ import java.util.Random;
 public class App {
     public static void main(String[] args) {
         int coffeeCups = 0;
-        int balance = 0;
         int sellRate = 1;
         int level = 1;
         int exp = 0;
@@ -22,7 +21,7 @@ public class App {
         if (chosen.indexOf("&") == 0) {
             if (chosen.equals("&bal")) {
                 out.println("You have brewed " + coffeeCups);
-                out.print(" cups of coffee, and your balance is " + balance );
+                out.print(" cups of coffee, and you have " + money +" money." );
             }
             if (chosen.equals("&brew")) {
                 if (level == 1) {
@@ -100,6 +99,7 @@ public class App {
                     if (money >= 25) {
                         out.println("Sugar bought! Value of coffee brought up by $1.");
                         sellRate ++;
+                        money -= 25;
                 }   
                     if (money >= 25) {
                     out.println("You don't have enough money for this.");
@@ -109,6 +109,7 @@ public class App {
                     if (money >= 30) {
                         out.println("Coffee maker bought! Value of coffee brought up by $2!");
                         sellRate += 2;
+                        money -= 30;
                     }
                     if (money <= 30) {
                         out.println("Not enough money for this.");
@@ -118,14 +119,47 @@ public class App {
                     if (money >= 45) {
                         out.println("Coffee Mugs bought! Value of coffee raised by $5!");
                         sellRate += 5;
+                        money -= 45;
                     }
                     if (money <= 45) {
                         out.println("Not enough money to buy this item.");
                     }
                 }
+                if (buyItem.equals("ebcm")) {
+                    if (level >= 1) {
+                        if (money >= 60) {
+                            out.println("Even Better Coffee Maker bought! Value of coffee raised by $15");
+                            sellRate += 15;
+                            money -= 60;
+                        }
+                        if (money <= 60) {
+                            out.println("Not enough money to buy this.");
+                        }
+                    }
+                    if (level <= 2) {
+                        out.println("Not a high enough level to buy this.");
+                    }
+                }
+                if (buyItem.equals("ceb")) {
+                    if (level >= 1) {
+                        if (money  >= 70) {
+                            out.println("Coffeeeeeee Beans bought! Value of coffee raised by $20");
+                            sellRate += 20;
+                            money -= 70;
+                    }
+                        if (money <= 70) {
+                            out.println("Not enough money to buy this.");
+                        }
+                }
+                    if (level <= 2) {
+                        out.println("Not a high enough level to buy this.");
+                    }
+                }
             }
-
+            choice1.close();
+            shopSelect.close();
                
 }
 }
 }
+
