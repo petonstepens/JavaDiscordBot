@@ -23,7 +23,7 @@ public class App {
                 out.println("You have brewed " + coffeeCups);
                 out.print(" cups of coffee, and you have " + money +" money." );
             }
-            if (chosen.equals("&brew")) {
+            if (chosen.equalsIgnoreCase("&brew")) {
                 if (level == 1) {
                     int brewCupslvl1 = BrewCupslvl1.nextInt(2);
                     out.print(brewCupslvl1+" cups of coffee brewed.");
@@ -75,7 +75,7 @@ public class App {
                     }
                 }
         }
-            if (chosen.equals("&sell")) {
+            if (chosen.equalsIgnoreCase("&sell")) {
                 if (coffeeCups != 0) {
                     out.print(coffeeCups + " cups of coffee sold.");
                     coffeeCups *= sellRate;
@@ -86,7 +86,7 @@ public class App {
                     out.println("You do not have enough coffee to sell.");
                 }
         }
-            if (chosen.equals("&store")) {
+            if (chosen.equalsIgnoreCase("&store")) {
                 out.println("Level 1 Items: \n");
                 out.println("Sugar: $25  Raises the value of your coffee by $1. Type 'sugar' to buy.");
                 out.println("Better coffee maker: $30  Raises the value of your coffee by $2. Type 'bcm' to buy.");
@@ -95,7 +95,7 @@ public class App {
                 out.println("Even Better Coffee Maker: $60  Raises the value of your coffee by $15. Type 'ebcm' to buy.");
                 out.println("Coffeeeeee beans: $70  A rare kind of coffee bean that gives 100x the caffiene. Brings value up by $20. Type 'ceb' to buy.");
                 String buyItem = shopSelect.next();
-                if (buyItem.equals("sugar")) {
+                if (buyItem.equalsIgnoreCase("sugar")) {
                     if (money >= 25) {
                         out.println("Sugar bought! Value of coffee brought up by $1.");
                         sellRate ++;
@@ -105,7 +105,7 @@ public class App {
                     out.println("You don't have enough money for this.");
                 }
                 }
-                if (buyItem.equals("bcm")) {
+                if (buyItem.equalsIgnoreCase("bcm")) {
                     if (money >= 30) {
                         out.println("Coffee maker bought! Value of coffee brought up by $2!");
                         sellRate += 2;
@@ -115,7 +115,7 @@ public class App {
                         out.println("Not enough money for this.");
                     }
                 }
-                if (buyItem.equals("hcm")) {
+                if (buyItem.equalsIgnoreCase("hcm")) {
                     if (money >= 45) {
                         out.println("Coffee Mugs bought! Value of coffee raised by $5!");
                         sellRate += 5;
@@ -125,7 +125,7 @@ public class App {
                         out.println("Not enough money to buy this item.");
                     }
                 }
-                if (buyItem.equals("ebcm")) {
+                if (buyItem.equalsIgnoreCase("ebcm")) {
                     if (level >= 1) {
                         if (money >= 60) {
                             out.println("Even Better Coffee Maker bought! Value of coffee raised by $15");
@@ -140,7 +140,7 @@ public class App {
                         out.println("Not a high enough level to buy this.");
                     }
                 }
-                if (buyItem.equals("ceb")) {
+                if (buyItem.equalsIgnoreCase("ceb")) {
                     if (level >= 1) {
                         if (money  >= 70) {
                             out.println("Coffeeeeeee Beans bought! Value of coffee raised by $20");
@@ -155,7 +155,7 @@ public class App {
                         out.println("Not a high enough level to buy this.");
                     }
                 }
-            }
+            } 
             choice1.close();
             shopSelect.close();
                
