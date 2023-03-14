@@ -159,6 +159,8 @@ public class App {
             choice1.close();
             shopSelect.close();
                
+} else {
+    out.println("Invalid statement.");
 }
 }
 }
