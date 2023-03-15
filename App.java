@@ -86,7 +86,7 @@ public class App {
                     out.println("You do not have enough coffee to sell.");
                 }
         }
-            if (chosen.equalsIgnoreCase("&store")) {
+            if (chosen.equalsIgnoreCase("&shop")) {
                 out.println("Level 1 Items: \n");
                 out.println("Sugar: $25  Raises the value of your coffee by $1. Type 'sugar' to buy.");
                 out.println("Better coffee maker: $30  Raises the value of your coffee by $2. Type 'bcm' to buy.");
@@ -155,6 +155,12 @@ public class App {
                         out.println("Not a high enough level to buy this.");
                     }
                 }
+            }
+                if (chosen.equalsIgnoreCase("&help")) {
+                    out.println("&help for help.");
+                    out.println("&shop for shop.");
+                    out.println("&sell to sell all brewed coffee");
+                    out.println("&brew to brew coffee.");
             } 
             choice1.close();
             shopSelect.close();
